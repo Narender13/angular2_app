@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            FORGOT USERNAME
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="form" text-wrap>
+ <div *ngIf="spinner" class="loader">
+        <ion-spinner class="loading"></ion-spinner>
+    </div>
+    <form [formGroup]="forgetUsernameForm" novalidate>
+        <ion-list no-lines class="list-with-header mb-0">
+            <ion-list-header text-uppercase>
+            </ion-list-header>
+            <ion-item class="form-group">
+                <ion-label stacked>* Please enter your email address:</ion-label>
+                <ion-input type="email" formControlName="email" placeholder="EMAIL ADDRESS" 
+                [class.invalid]="!forgetUsernameForm.controls.email.valid && forgetUsernameForm.controls.email.touched"></ion-input>
+            </ion-item>
+            <p ion-text *ngIf="!forgetUsernameForm.controls.email.valid && forgetUsernameForm.controls.email.touched" class="danger"
+                padding-left>Please enter a valid email address</p>
+        </ion-list>
+        <p ion-text *ngIf="emailInvalid" class="danger" padding-left>{{changeres.statusJson.statusMsg}}</p>
+        <ion-row responsive-sm class="action-btn">
+            <ion-col>
+                <button ion-button class="btn-green" (click)="emailSentPage()" [disabled]="!forgetUsernameForm.valid" large>CONTINUE</button>
+            </ion-col>
+        </ion-row>
+    </form>
+</ion-content>

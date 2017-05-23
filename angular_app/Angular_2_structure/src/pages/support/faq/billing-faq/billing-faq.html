@@ -1,0 +1,124 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>BILLING FAQs</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list class="list-with-header mb-0" text-wrap>
+        <ion-list-header text-uppercase>General Questions
+        </ion-list-header>
+        <ion-item detail-push (click)="billingAnsPage1()">
+            <p>What browsers work best on your website?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingAnsPage2()">
+            <p>Can more than one person register to pay the same policy over the web?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingAnsPage3()">
+            <p>What are my payment options?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingAnsPage4()">
+            <p>What credit cards do you accept?</p>
+        </ion-item>
+		<ion-item detail-push (click)="billingAnsPage5()">
+            <p>How much do I need to pay?</p>
+        </ion-item>
+		<ion-item detail-push (click)="billingAnsPage6()">
+            <p>My payment is late. How can I make my payment quickly?</p>
+        </ion-item>
+		<ion-item detail-push (click)="billingAnsPage7()">
+            <p>How do I make a payment by telephone?</p>
+        </ion-item>
+		<ion-item detail-push (click)="billingAnsPage8()">
+            <p>Do I have to register and create a user ID & password to make a payment online?</p>
+        </ion-item>
+		<ion-item detail-push (click)="billingAnsPage9()">
+            <p> What are the benefits of registering to make payment?</p>
+        </ion-item>
+		<ion-item detail-push (click)="billingAnsPage10()">
+            <p> If I sign up to receive email alerts, will I still receive a bill in the mail?</p>
+        </ion-item>
+		<ion-item detail-push (click)="billingAnsPage11()">
+            <p>Will I get charged any billing or payment fees?</p>
+        </ion-item>
+		<ion-item detail-push (click)="billingAnsPage12()">
+            <p>Why is the amount due on my bill different than the amount I see online?</p>
+        </ion-item>
+		<ion-item detail-push (click)="billingAnsPage13()">
+            <p>Why don't I see a recent payment reflected in my balance?</p>
+        </ion-item>
+		<ion-item detail-push (click)="billingAnsPage14()">
+            <p>Does Hanover accept payments I make on my bank's website?</p>
+        </ion-item>
+		<ion-item detail-push (click)="billingAnsPage15()">
+            <p>Why are there multiple debits from Hanover on my bank or credit card statement?</p>
+        </ion-item>
+        <ion-item detail-push class="botton-line" (click)="billingAnsPage16()">
+            <p>What type of records do I need to keep?</p>
+        </ion-item>
+        <ion-item detail-push class="botton-line" (click)="billingAnsPage17()">
+            <p>Can I change my personal information on the bill payment site?</p>
+        </ion-item>
+        <ion-item detail-push no-lines (click)="billingAnsPage18()">
+            <p>Can I make payments on policies I have linked to my account on myhanoverpolicy?</p>
+        </ion-item>
+    </ion-list>
+
+     <ion-list class="list-with-header" text-wrap>
+        <ion-list-header text-uppercase>EFT
+        </ion-list-header>
+        <ion-item detail-push (click)="billingEftAnsPage1()">
+            <p>What is recurring EFT?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingEftAnsPage2()">
+            <p>How can I save money by signing up for EFT?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingEftAnsPage3()">
+            <p>Can I sign up for recurring EFT?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingEftAnsPage4()">
+            <p>How do I sign up for recurring EFT?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingEftAnsPage5()">
+            <p>Does The Hanover charge a fee for using recurring EFT?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingEftAnsPage6()">
+            <p>Do I have to sign up again when my policy renews?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingEftAnsPage7()">
+            <p>Can I have different withdrawal dates on my policies?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingEftAnsPage8()">
+            <p>What options do I have for recurring EFT?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingEftAnsPage9()">
+            <p>Can I use more than one bank account?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingEftAnsPage10()">
+            <p>How long before my withdrawals will start?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingEftAnsPage11()">
+            <p>What happens if I don't have enough money in my account to cover my recurring EFT withdrawal?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingEftAnsPage12()">
+            <p>Will I still receive a paper bill in the mail?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingEftAnsPage13()">
+            <p> My e-mail address has changed. How do I update it?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingEftAnsPage14()">
+            <p>Can I update my mailing address online?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingEftAnsPage15()">
+            <p>How do I change the date my payment is withdrawn from my account or my banking information?</p>
+        </ion-item>
+        <ion-item detail-push (click)="billingEftAnsPage16()">
+            <p>I made changes to my information earlier today, but I just realized I have to go back and make another change. What happens to the changes I made earlier?</p>
+        </ion-item>
+        <ion-item detail-push  (click)="billingEftAnsPage17()">
+            <p>How do I cancel my recurring EFT enrollment?</p>
+        </ion-item>
+        <ion-item detail-push no-lines (click)="billingEftAnsPage18()">
+            <p>What kind of records should I keep?</p>
+        </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title text-wrap>MY INSURANCE POLICY FAQs</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list class="list-with-header" text-wrap>
+        <ion-list-header text-uppercase>
+        </ion-list-header>
+        <ion-item detail-push (click)="myInsuranceAnsPage1()">
+            <p>How can I change my policy coverages?</p>
+        </ion-item>
+        <ion-item detail-push (click)="myInsuranceAnsPage2()">
+            <p>How do I change my address?</p>
+        </ion-item>
+        <ion-item detail-push (click)="myInsuranceAnsPage3()">
+            <p>How can I get a copy of my vehicle ID cards?</p>
+        </ion-item>
+        <ion-item detail-push (click)="myInsuranceAnsPage4()">
+            <p>What is a declarations page?</p>
+        </ion-item>
+		<ion-item detail-push (click)="myInsuranceAnsPage5()">
+            <p>How can I view a copy of my declarations page or other policy documents?</p>
+        </ion-item>
+		<ion-item detail-push (click)="myInsuranceAnsPage6()">
+            <p>If I have questions about my policy, the coverages listed, or what it includes, who should I talk to?</p>
+        </ion-item>
+		<ion-item detail-push (click)="myInsuranceAnsPage7()">
+            <p>I am looking for a certain policy but I can't find it - why?</p>
+        </ion-item>
+		<ion-item detail-push no-lines (click)="myInsuranceAnsPage8()">
+            <p>What is the difference between Collision and Comprehensive coverage for my automobile?</p>
+        </ion-item>
+    </ion-list>
+</ion-content>

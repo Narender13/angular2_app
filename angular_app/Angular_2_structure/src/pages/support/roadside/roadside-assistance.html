@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>ROADSIDE ASSISTANCE</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content text-wrap>
+    <ion-list no-lines class="list-with-padding mb-0">
+        <ion-item>
+            <p>Call Roadside Assistance</p>
+            <a (click)="call()">
+                <h2 class="title">800-799-6977</h2>
+            </a>
+
+            <ion-icon item-right class="icon-right">
+                <img src="assets/icon/roadside.svg" alt="Roadside Assistance">
+            </ion-icon>
+        </ion-item>
+        <ion-item>
+            <p text-uppercase>Towing Emergency Services (24x7)</p>
+        </ion-item>
+    </ion-list>
+    <ion-list no-lines class="list-with-header">
+        <ion-list-header text-uppercase>
+            Services Provided
+        </ion-list-header>
+        <ion-item>
+            <ul class="list-basic">
+                <li>Flat tire</li>
+                <li>Jump Start</li>
+                <li>Battery replacement</li>
+                <li>Fuel delivery</li>
+                <li>Tow</li>
+                <li>Locked out of car</li>
+                <li>Extrication</li>
+            </ul>
+        </ion-item>
+    </ion-list>
+</ion-content>

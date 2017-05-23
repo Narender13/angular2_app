@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Property Claims FAQs</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list class="list-with-header" text-wrap>
+        <ion-list-header text-uppercase>
+        </ion-list-header>
+        <ion-item detail-push (click)="propertyAnsPage1()">
+            <p>How will my claim be settled?</p>
+        </ion-item>
+        <ion-item detail-push (click)="propertyAnsPage2()">
+            <p>Will my Mortgage Company be listed on my settlement check?</p>
+        </ion-item>
+        <ion-item detail-push (click)="propertyAnsPage3()">
+            <p>What is Recoverable Depreciation?</p>
+        </ion-item>
+        <ion-item detail-push (click)="propertyAnsPage4()">
+            <p>What do I do if my contractor finds additional damage?</p>
+        </ion-item>
+		<ion-item detail-push (click)="propertyAnsPage5()">
+            <p>What if my carpet is damaged?</p>
+        </ion-item>
+		<ion-item detail-push (click)="propertyAnsPage6()">
+            <p>One of my trees fell during a storm. Do I have coverage to remove the tree?</p>
+        </ion-item>
+		<ion-item detail-push (click)="propertyAnsPage7()">
+            <p>My tree fell on my neighbor's property during a windstorm - how is that covered? </p>
+        </ion-item>
+		<ion-item detail-push (click)="propertyAnsPage8()">
+            <p>There is a hole in my roof and rain is expected tomorrow, what can I do? </p>
+        </ion-item>
+		<ion-item detail-push (click)="propertyAnsPage9()">
+            <p>My roof leaked during a storm. There is a stain on my ceiling and my couch is wet.Is that covered? </p>
+        </ion-item>
+		<ion-item detail-push (click)="propertyAnsPage10()">
+            <p>Hail has damaged my roof, how much of the roof will be replaced due to the damage?</p>
+        </ion-item>
+		<ion-item detail-push (click)="propertyAnsPage11()">
+            <p>What happens if my power goes out and my food spoils? Do I have coverage?</p>
+        </ion-item>
+		<ion-item detail-push no-lines (click)="propertyAnsPage12()">
+            <p>My house was flooded.  Does my homeowners policy cover the damage?</p>
+        </ion-item>
+    </ion-list>
+</ion-content>

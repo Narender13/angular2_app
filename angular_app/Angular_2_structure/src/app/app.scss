@@ -1,0 +1,606 @@
+// App Global Sass
+//----------------------------------------------------------
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//----------------------------------------------------------
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+//----------------------------------------------------------
+// Font Family Declaration for the Application
+@font-face {
+    font-family: museo-sans;
+    font-style: normal;
+    font-weight: 100;
+    src: url("../assets/fonts/MuseoSans_100.otf") format("opentype");
+}
+
+@font-face {
+    font-family: museo-sans;
+    font-weight: 300;
+    font-style: normal;
+    src: url("../assets/fonts/MuseoSans_300.otf") format("opentype");
+}
+
+@font-face {
+    font-family: museo-sans;
+    font-weight: 500;
+    font-style: normal;
+    src: url("../assets/fonts/MuseoSans_500.otf") format("opentype");
+}
+
+@font-face {
+    font-family: museo-sans;
+    font-weight: 700;
+    font-style: normal;
+    src: url("../assets/fonts/MuseoSans_700.otf") format("opentype");
+}
+
+@font-face {
+    font-family: museo-sans;
+    font-weight: 900;
+    font-style: normal;
+    src: url("../assets/fonts/MuseoSans_900.otf") format("opentype");
+}
+
+//CSS realted to the SideMenu
+.sidemenu {
+    overflow: hidden;
+    .content {
+        overflow: hidden;
+        background-color: color($colors, primary);
+        .header {
+            .toolbar {
+                .toolbar-background {
+                    border: none!important;
+                    border-style: none!important;
+                    border-width: 0;
+					
+                }
+            }
+        }
+        .item {
+            color: color($colors, white);
+            background-color: inherit;
+            font-size: 1.4rem;
+            font-weight: 300;
+            &.title {
+                font-weight: 500;
+                padding-left: 20px;
+                padding-top: 44px;
+				text-align: right;
+            }
+        }
+        .list {
+            padding-left: 20px;
+            .item {
+                color: color($colors, white);
+                background-color: inherit;
+                font-size: 1.4rem;
+                font-weight: 300;
+                &.title {
+                    font-weight: 500;
+                }
+                &.item-block {
+                    min-height: 3.4rem;
+                    .item-inner {
+                        border-bottom: none;
+                        .label {
+                            margin: 5px 8px 5px 0;
+							text-align: right;
+                        }
+                    }
+                    &:first-child {
+                        border-top: 1px solid color($colors, blue);
+                    }
+                    &:last-child {
+                        border-bottom: 1px solid color($colors, blue);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//----------------------------------------------------------
+// List header
+.list {
+    .list-header {
+        position: relative;
+        padding-left: 16px;
+        border-bottom: none;
+        font-size: 1.2rem;
+        font-weight: 300;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        color: #333;
+        background: transparent;
+        margin-bottom: 0;
+        border-top: none;
+        min-height: 3.5rem;
+    }
+}
+
+//----------------------------------------------------------
+// Typography
+h2 {
+    &.title {
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: color($colors, primary);
+    }
+}
+
+//----------------------------------------------------------
+// Global CSS for the Application
+.title {
+    .toolbar-title {
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+}
+
+.bar-button {
+    font-size: 1.4rem;
+}
+
+.header-logo {
+    img {
+        height: 32px;
+        width: auto;
+    }
+}
+
+.btn-green {
+    border-radius: 0px;
+    height: 3.5rem;
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: color($colors, white);
+    background-color: color($colors, secondary);
+    border: 1px solid color($colors, secondary);
+    &:hover {
+        background-color: #5B8F22;
+    }
+    &.active {
+        background-color: #5B8F22;
+    }
+    &.inactive {
+        background-color: #C3DAA1;
+    }
+}
+
+.btn-outline {
+    border-radius: 0px;
+    height: 3.5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: color($colors, dark);
+    background-color: color($colors, white);
+    border: 1px solid #afafaf;
+    &:hover {
+        background-color: #5B8F22;
+    }
+    &.active {
+        background-color: #5B8F22;
+    }
+    &.inactive {
+        background-color: #C3DAA1;
+    }
+}
+
+.icon-right,
+.icon-left {
+    img {
+        height: 32px;
+        width: 32px;
+        margin: 0px;
+    }
+}
+
+.policy-title {
+    .label {
+        margin-bottom: 0;
+        h3 {
+            &.header {
+                margin-top: 11px;
+                font-weight: 700;
+                font-size: 2.2rem;
+            }
+        }
+    }
+    .icon-right {
+        margin-bottom: 0px;
+        img {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.list-with-padding {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: color($colors, white);
+    .item {
+        padding-left: 20px;
+    }
+    p {
+        font-size: 1.4rem;
+        line-height: 1.5rem;
+        font-weight: 300;
+        color: color($colors, dark);
+        strong {
+            font-weight: 500;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: color($colors, blue);
+    }
+    .item-block {
+        .item-inner {
+            border-bottom: 1px solid #EEE;
+        }
+        .label {
+            p {
+                font-size: 1.4rem;
+                line-height: 1.5rem;
+                font-weight: 300;
+                color: color($colors, dark);
+bl                .action-link {
+                    font-weight: 500;
+                    text-decoration: none;
+                    color: color($colors, primary);
+                }
+                strong {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+.list-with-header {
+    div:last-child {
+        .item-inner {
+            border-bottom: none;
+        }
+    }
+    .item {
+        padding-left: 20px;
+    }
+    .list-header {
+        margin-top: 0px!important;
+        height: 40px;
+        .label {
+            margin: 18px 8px 4px 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: color($colors, blue);
+    }
+    .item-block {
+        .item-inner {
+            border-bottom: 1px solid #eee;
+        }
+        .label {
+            p {
+                font-size: 1.4rem;
+                line-height: 1.5rem;
+                font-weight: 300;
+                color: color($colors, dark);
+                .action-link {
+                    font-weight: 700;
+                    text-decoration: none;
+                    color: color($colors, blue);
+                }
+                strong {
+                    font-weight: 500;
+                }
+                .vin-font {
+                    color: #666666;
+                }
+            }
+        }
+    }
+}
+
+.list-basic {
+    padding-left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    li {
+        font-size: 1.4rem;
+        font-weight: 300;
+        line-height: 1.8rem;
+    }
+}
+
+.form {
+    .form-group {
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 1.4rem;
+        font-weight: 300;
+        .label {
+            font-size: 1.4rem;
+            line-height: 1.5rem;
+            font-weight: 300;
+            color: color($colors, dark);
+        }
+        &.item-input ion-input {
+         //   box-shadow: inset 0 -1px 0 0 #dedede;
+            border-bottom: 1px solid #dedede;
+        }
+        &.item-input.input-has-focus ion-input {
+         //   box-shadow: inset 0 -1px 0 0 #dedede;
+             border-bottom: 1px solid #dedede;
+        }
+    }
+    .action-btn {
+        background: color($colors, white);
+        padding-bottom: 20px;
+        padding-top: 20px;
+        .btn-green {
+            margin-left: 15%;
+            margin-right: 15%;
+            width: 70%;
+        }
+    }
+}
+
+.success-msg {
+    .item {
+        text-align: center;
+        &.msg {
+            img {
+                width: 32px;
+                height: 32px;
+                margin-bottom: 8px;
+                margin-top: 8px;
+            }
+            p {
+                font-weight: 700;
+                color: color($colors, secondary);
+            }
+        }
+    }
+    .action-btn {
+        background: color($colors, white);
+        padding-bottom: 20px;
+        padding-top: 20px;
+        .btn-green {
+            margin-left: 15%;
+            margin-right: 15%;
+            width: 70%;
+        }
+    }
+}
+
+.alert-title {
+    .alert-icon {
+        text-align: center;
+        display: block;
+    }
+    img {
+        width: 40px;
+    }
+    .alert-danger {
+        display: block;
+        font-size: 14px;
+        color: #f53d3d;
+        text-align: center;
+    }
+}
+
+.alert-subtitle {
+    font-size: 13px;
+    font-weight: 300;
+    display: block;
+    text-align: center;
+}
+
+.alert-ios .alert-wrapper,
+.alert-md .alert-wrapper {
+    max-width: 98%;
+    border-radius: 0;
+    width: 98%;
+}
+
+//----------------------------------------------------------
+// Utilities Classes regarding margins and padding
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.py-15 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.pd-10 {
+    padding-bottom: 10px;
+}
+
+//-----------------------------------------------------------
+//Error Message
+
+.error-message {
+    margin: 0;
+    background-color: white;
+    padding-bottom: 10px;
+    font-weight: 300;
+    padding-left: 20px;
+}
+
+.no-padding {
+    padding-bottom: 0 !important;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.danger {
+    color: #f53d3d!important;
+    font-weight: 300!important;
+}
+.noPolicy-msg {
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+//-----------------------------------------------------------
+//Spinner
+.loading {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 32px;
+}
+
+.loader {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.faqList ul li {
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    color: color($colors, dark);
+}
+
+// comma for last element
+.insured span:after {
+    content: ",";
+}
+
+.insured span:last-child:after {
+    content: " ";
+}
+
+.capitalize {
+    text-transform: capitalize!important;
+}
+
+// bottom border
+.botton-line {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #EEE !important;
+}
+
+//alert button css
+.alert-ios .alert-button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    border: 2px solid #e7e7e7;
+    color: #777777;
+    min-width: 25%;
+    max-width: 45%;
+    font-weight: 500!important;
+    &:last-child {
+        border-right: 2px solid #e7e7e7;
+    }
+}
+
+//tooltip
+.custom-tooltip{
+    color: #777 !important;
+    background: #ffffff !important;
+    border-radius: 1px !important;
+    font-size: 12px !important;
+    font-weight: 300;
+    font-family: museo-sans, -apple-system, "Helvetica Neue", Roboto, sans-serif !important;
+    padding: 3px 5px;
+    margin: 1%!important;
+    width: 98%;
+    box-shadow: 0px 0px 6px 0px #CCCCCC;
+}
+
+#pswIcon {
+    position: absolute;
+    left: 85px;
+    top: 0;
+    margin-top: 2px;
+}
+
+#cnfPswIcon {
+    position: absolute;
+    left: 140px;
+    top: 0;
+    margin-top: 2px;
+}
+
+.custom-tooltip{
+    &.psw{
+        &::before{
+            content: '';
+            position: absolute;
+            left: 108px;
+            top: 32px;
+            width: 0;
+            height: 0;
+            box-sizing: border-box;
+            border: 6px solid #ccc;
+            box-shadow: -3px 3px 3px 0 #ccc;
+            transform: rotate(135deg);
+            transform-origin: 0 0;
+            border-color: transparent transparent #fff #fff;
+        }
+    }
+}
+.custom-tooltip{
+    &.cnfpsw{
+        &::before{
+            content: '';
+            position: absolute;
+            left: 163px;
+            top: 32px;
+            width: 0;
+            height: 0;
+            box-sizing: border-box;
+            border: 6px solid #ccc;
+            box-shadow: -3px 3px 3px 0 #ccc;
+            transform: rotate(135deg);
+            transform-origin: 0 0;
+            border-color: transparent transparent #fff #fff;
+        }
+    }
+}
+
+
+.invalid{
+    border-bottom: 1px solid #f53d3d !important;
+}
+
+.greenAction {
+    background-color: #7CA940!important;
+    color:#ffffff!important;
+}
+
+.callAlert {
+    .alert-wrapper {
+        border-radius: 10px;
+    }
+}
+

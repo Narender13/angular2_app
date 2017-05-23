@@ -1,0 +1,97 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>ACCOUNT REGISTRATION</ion-title>
+    </ion-navbar>
+</ion-header>
+<div *ngIf="spinner" class="loader">
+    <ion-spinner class="loading"></ion-spinner>
+</div>
+<ion-content class="form" text-wrap>
+    <form novalidate class="login-form" [formGroup]="signUpForm">
+        <ion-list no-lines class="list-with-header mb-0">
+            <ion-list-header text-uppercase>
+                SETUP CUSTOMER PROFILE
+            </ion-list-header>
+            <ion-item class="form-group" [class.no-padding]="!signUpForm.controls.username.valid && signUpForm.controls.username.touched">
+                <ion-label stacked>* Username</ion-label>
+                <ion-input formControlName="username" [(ngModel)]="user" type="text" placeholder="TYPE HERE" spellcheck="false" autocapitalize="off"
+                    (ngModelChange)="noSpaces(user)" [class.invalid]="!signUpForm.controls.username.valid && signUpForm.controls.username.touched"
+                    required>
+                </ion-input>
+            </ion-item>
+            <p ion-text *ngIf="!signUpForm.controls.username.valid && signUpForm.controls.username.touched"  class="error-message danger">Username should be alphanumeric and minimum 6 characters</p>
+            <p ion-text *ngIf="noSpace" color="danger" class="error-message">Spaces are not allowed</p>
+            <ion-item class="form-group" [class.no-padding]="!signUpForm.controls.password.valid && signUpForm.controls.password.touched">
+                <ion-label stacked id="pswTooltip">
+                    * Password
+                    <p *ngIf="passwordToolTip" class="custom-tooltip psw">Select a password that is between 6-30 characters long. Special characters such as & # % * cannot be
+                        used.
+                    </p>
+                </ion-label>
+                <button ion-button id="pswIcon" icon-only clear item-right (click)="passToolTip()"><ion-icon name="help-circle"></ion-icon></button>
+                <ion-input formControlName="password" type="password" placeholder="TYPE HERE" [class.invalid]="!signUpForm.controls.password.valid && signUpForm.controls.password.touched"
+                    required>
+                </ion-input>
+            </ion-item>
+            <p ion-text *ngIf="!signUpForm.controls.password.valid && signUpForm.controls.password.touched" class="error-message danger">Please enter a valid password</p>
+
+            <ion-item class="form-group" [class.no-padding]="!signUpForm.controls.confirmpassword.valid && signUpForm.controls.confirmpassword.touched">
+                <ion-label stacked id="cnfPswTooltip">
+                    * Confirm Password
+                    <p *ngIf="confirmPassToolTip" class="custom-tooltip cnfpsw">Select a password that is between 6-30 characters long. Special characters such as & # % * cannot be
+                        used.
+                    </p>
+                </ion-label>
+                <button ion-button id="cnfPswIcon" icon-only clear item-right (click)="confirmToolTip()"><ion-icon name="help-circle"></ion-icon></button>
+                <ion-input formControlName="confirmpassword" type="password" placeholder="TYPE HERE" [class.invalid]="!signUpForm.controls.confirmpassword.valid && signUpForm.controls.confirmpassword.touched"
+                    required>
+                </ion-input>
+            </ion-item>
+            <p ion-text *ngIf="!signUpForm.controls.confirmpassword.valid && signUpForm.controls.confirmpassword.touched && signUpForm.controls.password.value"
+                class="error-message danger">The passwords you entered did not match</p>
+
+            <ion-item class="form-group" [class.no-padding]="!signUpForm.controls.email.valid && signUpForm.controls.email.touched">
+                <ion-label stacked>* Email Address</ion-label>
+                <ion-input formControlName="email" type="email" placeholder="TYPE HERE" [class.invalid]="!signUpForm.controls.email.valid && signUpForm.controls.email.touched"
+                    required>
+                </ion-input>
+            </ion-item>
+            <p ion-text *ngIf="!signUpForm.controls.email.valid && signUpForm.controls.email.touched" class="error-message danger">Please enter a valid email address</p>
+
+            <ion-item class="form-group" [class.no-padding]="!signUpForm.controls.confirmemail.valid && signUpForm.controls.confirmemail.touched">
+                <ion-label stacked>* Confirm Email Address</ion-label>
+                <ion-input formControlName="confirmemail" type="email" placeholder="TYPE HERE" [class.invalid]="!signUpForm.controls.confirmemail.valid && signUpForm.controls.confirmemail.touched"
+                    required>
+                </ion-input>
+            </ion-item>
+            <p ion-text *ngIf="!signUpForm.controls.confirmemail.valid && signUpForm.controls.confirmemail.touched && signUpForm.controls.email.value"
+                class="error-message danger">The Email address you entered did not match</p>
+            <ion-item class="form-group" [class.no-padding]="!signUpForm.controls.challenge1.valid && signUpForm.controls.challenge1.touched">
+                <ion-label stacked>* What is your mother’s maiden name?</ion-label>
+                <ion-input formControlName="challenge1" type="text" placeholder="TYPE HERE" [class.invalid]="!signUpForm.controls.challenge1.valid && signUpForm.controls.challenge1.touched"
+                    required>
+                </ion-input>
+            </ion-item>
+            <p ion-text *ngIf="!signUpForm.controls.challenge1.valid && signUpForm.controls.challenge1.touched" class="error-message danger">Required</p>
+            <ion-item class="form-group" [class.no-padding]="!signUpForm.controls.challenge2.valid && signUpForm.controls.challenge2.touched">
+                <ion-label stacked>* What is the city of your birth?</ion-label>
+                <ion-input formControlName="challenge2" type="text" placeholder="TYPE HERE" [class.invalid]="!signUpForm.controls.challenge2.valid && signUpForm.controls.challenge2.touched"
+                    required>
+                </ion-input>
+            </ion-item>
+            <p ion-text *ngIf="!signUpForm.controls.challenge2.valid && signUpForm.controls.challenge2.touched" class="error-message danger">Required</p>
+
+            <ion-item class="form-group check-me">
+                <ion-label>
+                    I agree to the <a ion-text color="blue" (click)="termConditionsModal()">Terms and Conditions</a>
+                </ion-label>
+                <ion-checkbox formControlName="checked"></ion-checkbox>
+            </ion-item>
+        </ion-list>
+        <ion-row responsive-sm class="action-btn ">
+            <ion-col>
+                <button ion-button (click)="register(signUpForm)" class="btn-green" [disabled]="!signUpForm.valid" block>CREATE ACCOUNT</button>
+            </ion-col>
+        </ion-row>
+    </form>
+</ion-content>

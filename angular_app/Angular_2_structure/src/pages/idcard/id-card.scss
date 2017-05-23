@@ -1,0 +1,50 @@
+page-id-card-document {
+    .list {
+        margin: 0px;
+    }
+    .itemHeight {
+        height: 70px;
+    }
+    img {
+        height: 32px;
+        width: 32px;
+    }
+    .label {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .p-font {
+        margin: 0px;
+        padding-left: 20px;
+        padding-top: 30px;
+        padding-bottom: 5px;
+    }
+    .list-top {
+        padding-top: 0px;
+    }
+    .vin-font {
+        font-weight: 300;
+        color: #666666;
+        font-size: 14px;
+    }
+    .list-with-header{
+    div{ div{
+            .item.item-block{
+                .item-inner{
+                    border-bottom: 1px solid #eee;
+                }
+            }
+           
+        }
+         &:last-child{
+                > div:last-child{
+                    .item.item-block:last-child{
+                       .item-inner{
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+    }
+    }
+}

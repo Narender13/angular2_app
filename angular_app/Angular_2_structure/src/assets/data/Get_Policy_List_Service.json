@@ -1,0 +1,29 @@
+{
+  "userFirstName": "John",
+  "userLastName": "Smith",
+  "policyList": [{
+    "policyType": "Home",
+    "policy": [{
+      "policyName": "John's Home 1",
+      "policyNumber": "HPG-A555555",
+      "policyStartDate": "11/11/1111",
+      "policyEndDate": "11/11/1111",
+      "amountDue": "0.00"
+    }]
+  }, {
+    "policyType": "Auto",
+    "policy": [{
+      "policyName": "John's Auto 1",
+      "policyNumber": "APN-8888888",
+      "policyStartDate": "11/11/1111",
+      "policyEndDate": "11/11/1111",
+      "amountDue": "0.00"
+    }, {
+      "policyName": "John's Auto 2",
+      "policyNumber": "APN-9999999",
+      "policyStartDate": "11/11/1111",
+      "policyEndDate": "11/11/1111",
+      "amountDue": "0.00"
+    }]
+  }]
+}

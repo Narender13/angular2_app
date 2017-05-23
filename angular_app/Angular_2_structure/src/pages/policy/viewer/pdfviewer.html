@@ -1,0 +1,22 @@
+<ion-header primary>
+    <ion-navbar>
+        <ion-title>
+            <p class="header">{{pageTitle}}</p>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content text-wrap>
+    <div text-center>
+         <ion-icon *ngIf="page != 1" range-left large name="arrow-dropleft-circle" class="custom-icon" (click)="previousPage()"></ion-icon>
+           
+	    <label>{{pageLabel}}</label>
+	     <ion-icon  *ngIf="page < pageCount" range-right big name="arrow-dropright-circle" class="custom-icon" (click)="nextPage()"></ion-icon>
+	</div>
+        <ion-range [min]="zoomMin" [max]="zoomMax" [(ngModel)]="zoom" (ionChange)="updateResults()">
+            <ion-icon range-left small name="remove"></ion-icon>
+            <ion-icon range-right name="add"></ion-icon>
+        </ion-range>
+       
+    <pdf-viewer [src]="pdfSrc" [zoom]="zoompdf"  [page]="page" [original-size]="false" style="display: block;">
+    </pdf-viewer>
+</ion-content>

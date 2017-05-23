@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            POLICY DETAILS
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content text-wrap>
+    <div *ngIf="dwellingPolicyData">
+        <div *ngIf="dwellingPolicyData.policyBalanceDisplayInd" class="due-area">
+            <ion-list no-lines class="list-with-header mb-0">
+                <div *ngIf="dwellingPolicyData.billingDueMessage">
+                    <ion-item>
+                        <p class="danger">{{dwellingPolicyData.billingDueMessage}}</p>
+                    </ion-item>
+                </div>
+                <ion-item>
+                    <p text-capitalize>Insured Address: {{dwellingPolicyData.addr.addr1 | lowercase}} {{dwellingPolicyData.addr.addr2 | lowercase}},
+                        {{dwellingPolicyData.addr.city | lowercase}} {{dwellingPolicyData.addr.stateProvCd}} {{dwellingPolicyData.addr.postalCode}}</p>
+                    <p>Policy Period: {{dwellingPolicyData.policyEffectiveDt}}-{{dwellingPolicyData.policyExpirationDt}}</p>
+                    <p>Policy Balance: {{dwellingPolicyData.policyBalance}}</p>
+                    <p *ngIf="dwellingPolicyData.payMyBillDisplayInd">{{dwellingPolicyData.amountDueLbl || "Amount Due :"}} {{dwellingPolicyData.amountDue || "$0.00"}}</p>
+                </ion-item>
+                <ion-list-header>
+                </ion-list-header>
+            </ion-list>
+        </div>
+        <ion-list no-lines class="list-with-padding mb-0">
+            <ion-item class="policy-title">
+                <ion-icon item-right class="icon-right">
+                    <img src="assets/icon/dwelling.svg" item-right alt="Dwelling Fire Policies">
+                </ion-icon>
+                <h3 class="header" text-uppercase>{{dwellingPolicyData.policyNickName}}</h3>
+            </ion-item>
+            <ion-item>
+                <p>Policy No. {{dwellingPolicyData.policySymbol}}-{{dwellingPolicyData.policyNbr}} </p>
+                <p>Policy Period: {{dwellingPolicyData.policyEffectiveDt}}-{{dwellingPolicyData.policyExpirationDt}}</p>
+                <p>Account ID/Customer No. {{dwellingPolicyData.accountId || dwellingPolicyData.customerNbr}}</p>
+            </ion-item>
+            <ion-item class="insured">
+                <p>Insured Name:<span *ngFor="let insuredName of dwellingPolicyData.personNameList.personName" text-capitalize> {{insuredName.givenName | lowercase}} {{insuredName.surName | lowercase}}</span>                    </p>
+                <p text-capitalize>Insured Address: {{dwellingPolicyData.addr.addr1 | lowercase}} {{dwellingPolicyData.addr.addr2 | lowercase}},{{dwellingPolicyData.addr.city
+                    | lowercase}} {{dwellingPolicyData.addr.stateProvCd}} {{dwellingPolicyData.addr.postalCode}}</p>
+            </ion-item>
+            <ion-item>
+                <p>Policy Premium: {{dwellingPolicyData.policyPremium || "$0.00"}}</p>
+                <p>Dwelling Amount: {{dwellingPolicyData.dwellingAmount || "$0.00"}}</p>
+                <p>Deductible: {{dwellingPolicyData.deductible || "$0.00"}}</p>
+            </ion-item>
+            <ion-item *ngIf="dwellingPolicyData.payMyBillDisplayInd">
+                <p>{{dwellingPolicyData.amountDueLbl || "Amount Due :"}} {{dwellingPolicyData.amountDue || "$0.00"}}</p>
+            </ion-item>
+        </ion-list>
+        <ion-list class="list-with-header mb-0">
+            <ion-list-header text-uppercase>
+            </ion-list-header>
+            <ion-item (click)="myBillsPage()" detail-push>
+                <p>View/Pay Bill</p>
+            </ion-item>
+            <ion-item no-lines (click)="policyDocumentPage()" detail-push>
+                <p>Policy Documents</p>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

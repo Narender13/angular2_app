@@ -1,0 +1,60 @@
+$font-path: "../assets/fonts";
+
+@import "ionic.globals";
+
+// Shared Variables for app
+// --------------------------------------------------
+
+
+// Global Color Variables for app
+// --------------------------------------------------
+$colors: (
+  primary:    	#003150,
+  secondary: 	#7CA940,
+  orange: 		#DF7A00,
+  blue: 		#005580,
+  light: 		#f5f5f5, 
+  gray: 		#777777,
+  danger:     	#f53d3d,
+  dark:       	#333333,
+  white: 		#ffffff
+);
+
+// Font Family and Font-size
+// --------------------------------------------------
+$font-family-base:"museo-sans",-apple-system, "Helvetica Neue", "Roboto", sans-serif !default;
+$font-size-base:1.4rem !default; // 1.4rem == 14px
+
+// Toolbar backround color and Font size
+// --------------------------------------------------
+$toolbar-background:color($colors, primary);
+$background-color:color($colors, light);
+$list-background-color:color($colors, white);
+
+//Error Message
+$text-input-show-error-highlight:        false !default;
+$text-input-hightlight-color-invalid:    color($colors, danger);
+
+
+// iOS only Sass variables can go here
+// --------------------------------------------------
+
+
+$toggle-ios-width: 30.6px;
+$toggle-ios-height: 19.2px;
+
+
+// App Theme
+// --------------------------------------------------
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+@import "ionic.ionicons";
+
+
+// Default Fonts for Android and Windows
+// --------------------------------------------------
+@import "roboto";
+@import "noto-sans";

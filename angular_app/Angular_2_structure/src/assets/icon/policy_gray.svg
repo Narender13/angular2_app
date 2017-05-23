@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="-3 181.2 151.6 151.6" xml:space="preserve" enable-background="new -3 181.2 151.6 151.6">
+  <style type="text/css">
+    
+	.st0{fill:#cccccc;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#FFFFFF;stroke:#cccccc;stroke-width:3.5507;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#cccccc;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;}
+
+  </style>
+  <g>
+    <circle class="st0" cx="72.8" cy="257" r="75.8"/>
+    <path class="st1" d="M107.7 299.8H38.9c-2.9 0-5.3-2.4-5.3-5.3v-83.2c0-2.9 2.4-5.3 5.3-5.3h68.8c2.9 0 5.3 2.4 5.3 5.3v83.2C113 297.4 110.6 299.8 107.7 299.8z"/>
+    <path class="st2" d="M97.4 307.3H31.9c-2.8 0-5.1-2.3-5.1-5.1V223c0-2.8 2.3-5.1 5.1-5.1h65.5c2.8 0 5.1 2.3 5.1 5.1v79.2C102.5 305 100.2 307.3 97.4 307.3z"/>
+    <line class="st3" x1="37.3" y1="233.8" x2="90.9" y2="233.8"/>
+    <line class="st3" x1="37.3" y1="245.3" x2="90.9" y2="245.3"/>
+    <line class="st3" x1="37.3" y1="256.6" x2="90.9" y2="256.6"/>
+    <line class="st3" x1="37.3" y1="268" x2="90.9" y2="268"/>
+    <line class="st3" x1="37.3" y1="279.6" x2="90.9" y2="279.6"/>
+    <line class="st3" x1="37.3" y1="291" x2="90.9" y2="291"/>
+  </g>
+</svg>

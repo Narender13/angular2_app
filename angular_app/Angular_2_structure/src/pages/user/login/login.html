@@ -1,0 +1,62 @@
+<div *ngIf="spinner" class="loader">
+    <ion-spinner class="loading"></ion-spinner>
+</div>
+<ion-content class="login-page" text-wrap>
+    <div class="logo">
+        <img src="assets/logo_light.png" alt="Hanover logo">
+    </div>
+    <p class="line">Use your MHP account details to log in</p>
+    <form #loginForm="ngForm" novalidate class="login-form">
+        <ion-list no-lines padding>
+            <ion-item class="pd-16">
+                <ion-input [(ngModel)]="user.usrId" name="usrId" type="text" placeholder="USERNAME" #usrId="ngModel" (ngModelChange)="hideMsg()"
+                    spellcheck="false" autocapitalize="off" [class.invalid]="!usrId.valid && usrId.touched" required>
+                </ion-input>
+            </ion-item>
+            <p ion-text *ngIf="!usrId.valid && usrId.touched" color="danger" padding-left>
+                Username is required
+            </p>
+            <ion-item class="pd-16">
+                <ion-input [(ngModel)]="user.passwd" name="passwd" type="password" placeholder="PASSWORD" #passwd="ngModel" (ngModelChange)="hideMsg()"
+                     [class.invalid]="!passwd.valid && passwd.touched" required>
+                </ion-input>
+            </ion-item>
+            <p ion-text *ngIf="!passwd.valid && passwd.touched" color="danger" padding-left>
+                Password is required
+            </p>
+            
+        </ion-list>
+        <ion-row responsive-sm>
+            <ion-col detail-push>
+                <button ion-button (click)="onLogin(loginForm)" type="submit" class="btn-green" block [disabled]="!loginForm.valid">LOG IN</button>
+            </ion-col>
+        </ion-row>
+    </form>
+    <ion-list no-lines class="toggle-list">
+        <ion-item>
+            <ion-toggle color="secondary" item-left [(ngModel)]="remember"></ion-toggle>
+            <ion-label>REMEMBER USERNAME</ion-label>
+            <ion-icon name="star"></ion-icon>
+        </ion-item>
+       
+            <ion-item>
+                <ion-toggle color="secondary" item-left [(ngModel)]="toggleTouchIDStatus" (ionChange)="toggleTouchIDUpdate()"></ion-toggle>
+                <ion-label>{{touchIdLabel}}</ion-label>
+            </ion-item>
+       
+    </ion-list>
+    <div class="center-align">
+        <ion-list class="link-clean">
+            <p class="no-margin"><a class="item no-padding" (click)="forgotUsernamePage()">FORGOT USERNAME?</a></p>
+            <p class="no-margin"><a class="item no-padding" (click)="managePasswordPage()">FORGOT PASSWORD?</a></p>
+
+        </ion-list>
+    </div>
+    <div class="action-btn-list">
+        <button ion-button full outline class="gray" (click)="accidentSupportPage()">ACCIDENT SUPPORT</button>
+        <button ion-button full outline class="gray" (click)="contactUsPage()">CONTACT US</button>
+        <button ion-button full outline class="gray" (click)="faqPage()">FAQs</button>
+        <button ion-button full outline (click)="VerifyPolicyPage()">DON'T HAVE AN ACCOUNT?&nbsp; <b> SIGN UP</b>
+        </button>
+    </div>
+</ion-content>

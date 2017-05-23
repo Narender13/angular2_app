@@ -1,0 +1,77 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>MY POLICY DETAILS</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content text-wrap>
+    <ion-list class="list-with-header mb-0">
+        <ion-list-header text-uppercase *ngIf="homePolicyData[0]">
+            HOME POLICIES:
+        </ion-list-header>
+        <div *ngFor="let homePolicy of homePolicyData;  let i = index">
+            <ion-item (click)="homePage(homePolicy,i+1)" detail-push>
+                <ion-icon item-left class="icon-left">
+                    <img src="assets/icon/house.svg" alt="Home Policies">
+                </ion-icon>
+                <h3 text-uppercase>{{homePolicy.policyNickName}}</h3>
+                <p>Policy No. {{homePolicy.policySymbol}}-{{homePolicy.policyNbr}}</p>
+            </ion-item>
+        </div>
+    </ion-list>
+    <ion-list class="list-with-header mb-0">
+        <ion-list-header text-uppercase *ngIf="autoPolicyData[0]">
+            AUTO POLICIES:
+        </ion-list-header>
+        <div *ngFor="let autoPolicy of autoPolicyData; let i = index">
+            <ion-item (click)="autoPage(autoPolicy,i+1)" detail-push>
+                <ion-icon item-left class="icon-left">
+                    <img src="assets/icon/car.svg" alt="Auto Policies">
+                </ion-icon>
+                <h3 text-uppercase>{{autoPolicy.policyNickName}}</h3>
+                <p>Policy No. {{autoPolicy.policySymbol}}-{{autoPolicy.policyNbr}}</p>
+            </ion-item>
+        </div>
+    </ion-list>
+    <ion-list class="list-with-header mb-0">
+        <ion-list-header text-uppercase *ngIf="umbrellaPolicyData[0]">
+            UMBRELLA POLICIES:
+        </ion-list-header>
+        <div *ngFor="let umbrellaPolicy of umbrellaPolicyData; let i = index">
+            <ion-item (click)="umbrellaPage(umbrellaPolicy,i+1)" detail-push>
+                <ion-icon item-left class="icon-left">
+                    <img src="assets/icon/umbrella.svg" alt="Umbrella Policies">
+                </ion-icon>
+                <h3 text-uppercase>{{umbrellaPolicy.policyNickName}}</h3>
+                <p>Policy No. {{umbrellaPolicy.policySymbol}}-{{umbrellaPolicy.policyNbr}}</p>
+            </ion-item>
+        </div>
+    </ion-list>
+    <ion-list class="list-with-header mb-0">
+        <ion-list-header text-uppercase *ngIf="waterPolicyData[0]">
+            WATERCRAFT POLICIES:
+        </ion-list-header>
+        <div *ngFor="let waterPolicy of waterPolicyData; let i = index">
+            <ion-item (click)="waterPage(waterPolicy,i+1)" detail-push>
+                <ion-icon item-left class="icon-left">
+                    <img src="assets/icon/boat.svg" alt="WaterCraft Policies">
+                </ion-icon>
+                <h3 text-uppercase>{{waterPolicy.policyNickName}}</h3>
+                <p>Policy No. {{waterPolicy.policySymbol}}-{{waterPolicy.policyNbr}}</p>
+            </ion-item>
+        </div>
+    </ion-list>
+    <ion-list class="list-with-header mb-0">
+        <ion-list-header text-uppercase *ngIf="firePolicyData[0]">
+            DWELLING FIRE POLICIES:
+        </ion-list-header>
+        <div *ngFor="let firePolicy of firePolicyData; let i = index">
+            <ion-item (click)="firePage(firePolicy,i+1)" detail-push>
+                <ion-icon item-left class="icon-left">
+                    <img src="assets/icon/dwelling.svg" alt="Dwelling Fire Policies">
+                </ion-icon>
+                <h3 text-uppercase>{{firePolicy.policyNickName}}</h3>
+                <p>Policy No. {{firePolicy.policySymbol}}-{{firePolicy.policyNbr}}</p>
+            </ion-item>
+        </div>
+    </ion-list>
+</ion-content>

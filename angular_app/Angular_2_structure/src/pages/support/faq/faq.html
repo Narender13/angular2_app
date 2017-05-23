@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle class="button" (click)="backDashboard()">
+            <ion-icon name="arrow-back"></ion-icon>
+            Back
+        </button>
+        <ion-title>FAQs</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list class="list-with-header">
+        <ion-list-header text-uppercase>
+        </ion-list-header>
+        <ion-item detail-push (click)="autoFaqPage()">
+            <p>Auto Claims FAQs</p>
+        </ion-item>
+        <ion-item detail-push (click)="propertyFaqPage()">
+            <p>Property Claims FAQs</p>
+        </ion-item>
+        <ion-item detail-push (click)="myInsuranceFaqPage()">
+            <p>My Insurance Policy FAQs</p>
+        </ion-item>
+        <ion-item no-lines detail-push (click)="billingFaqPage()">
+            <p>Billing FAQs</p>
+        </ion-item>
+    </ion-list>
+</ion-content>

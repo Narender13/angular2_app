@@ -1,0 +1,48 @@
+page-policy-document {
+    .itemHeight2 {
+    }
+    .list {
+        margin: 0px;
+        div:last-child {
+            div{
+           .itemHeight2 {
+             .item-inner{
+                border-bottom: none;
+            }
+        }
+    }
+        }
+        .itemHeight1 {
+            border-bottom: 1px solid #c8c7cc;
+        }
+    }
+    .itemHeight2 {
+        padding-left: 0px;
+        &.item {
+            &.item-block .item-inner {
+                border-bottom: none;
+            }
+        }
+        &:after {
+            padding: 0;
+            margin: 0;
+            display: block;
+            content: "";
+            width: 90%;
+            height: 1px;
+            background-color: #eee;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
+    img {
+        height: 45px;
+        padding-left: 40px;
+    }
+    .label {
+        padding-left: 20px;
+        font-size: 1.4rem;
+        font-weight: 300;
+    }
+}

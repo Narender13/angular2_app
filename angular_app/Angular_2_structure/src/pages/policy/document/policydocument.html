@@ -1,0 +1,57 @@
+<ion-header primary>
+    <ion-navbar>
+        <ion-title>
+            <p class="header">POLICY DOCUMENTS</p>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<div *ngIf="spinner" class="loader">
+    <ion-spinner class="loading"></ion-spinner>
+</div>
+<ion-content text-wrap>
+    
+    <div *ngIf="policyData">
+        <ion-list text-wrap>
+            <ion-item class="itemHeight1">
+                <p><span text-capitalize>{{policyData.policyNickName | lowercase}}</span></p>
+                <p>Policy No. {{policyData.policySymbol}}-{{policyData.policyNbr}}</p>
+                <p text-capitalize>Policy Address: {{policyData.addr.addr1 | lowercase}} {{policyData.addr.addr2 | lowercase}},{{policyData.addr.city
+                    | lowercase}} {{policyData.addr.stateProvCd}} {{policyData.addr.postalCode}}
+                </p>
+            </ion-item>
+        </ion-list>
+    </div>
+    <div *ngIf="platinumDocument">
+        <ion-list text-wrap>
+            <div *ngFor="let documentList of platinumDocument.policyDocumentInfo">
+                <div *ngIf="documentList.responseCode == '0000' ">
+                    <ion-item class="itemHeight2" (click)="getPlatinumDocumentPDF(documentList)">
+                        <img src="assets/icon/pdf.svg" item-left alt="Policy Document">
+                        <h3 text-capitalize>Platinum Coverage Summary</h3>
+                        <p>Coverage Summary Date: {{documentList.txnEffectiveDate}}</p>
+                    </ion-item>
+                </div>
+            </div>
+        </ion-list>
+    </div>
+    <div *ngIf="policyDocument">
+        <ion-list text-wrap>
+            <div *ngFor="let documentList of policyDocument.policyDocumentInfo">
+                <div *ngIf="documentList.responseCode == '0000' ">
+                    <ion-item class="itemHeight2" (click)="getPolicyDocumentPDF(documentList)">
+                        <img src="assets/icon/pdf.svg" item-left alt="Policy Document">
+                        <h3 text-capitalize>{{documentList.actionCD | lowercase}}</h3>
+                        <p>Policy Period: {{documentList.fromIssueDate}} - {{documentList.policyExpDate}}</p>
+                        <p>Change Effective Date: {{documentList.txnEffectiveDate}}</p>
+                        <p text-capitalize>Change Reason: {{documentList.changeReason | lowercase}}</p>
+                    </ion-item>
+                </div>
+                <div *ngIf="documentList.responseCode == '0001' && !platinumPolicyFlag">
+                    <ion-item class="itemHeight2">
+                        <p class="danger">{{documentList.responseMessage}}</p>
+                    </ion-item>
+                </div>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

@@ -1,0 +1,24 @@
+{
+  "policyName": "John's Home 1",
+  "policyNumber": "HPG-A555555",
+  "policyAddress": "1 Charles Street Worcester MA 01653",
+  "document":[{
+    "changeEffectiveDate": "02-23-2016",
+    "changeReason": "Change Mortage",
+    "documentName": "Policy Modification",
+    "documentStartDate": "11/11/1111",
+    "documentEndDate": "11/11/1111"
+  }, {
+    "changeEffectiveDate": "02-23-2016",
+    "changeReason": "Change Mortage",
+    "documentName": "Renewal Policy",
+    "documentStartDate": "11/11/1109",
+    "documentEndDate": "11/11/1110"
+  }, {
+    "changeEffectiveDate": "02-23-2016",
+    "changeReason": "Change Mortage",
+    "documentName": "NewPolicy",
+    "documentStartDate": "11/11/1109",
+    "documentEndDate": "11/11/111"
+}]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "policyNumber": "HPG-A555555",
+    "vehicleName": "2009 Toyoto Camry",
+    "idCardImage": "assets/images.jpg",
+    "vin": "ABCDEFGHIJKL1234567"
+  },
+  {
+    "policyNumber": "HPG-A555555",
+    "vehicleName": "2009 Toyoto Camry",
+    "idCardImage": "assets/images.jpg",
+    "vin": "ABCDEFGHIJKL1234567"
+  },
+  {
+    "policyNumber": "HPG-A555555",
+    "vehicleName": "20111 Nissan Maxima",
+    "idCardImage": "assets/images.jpg",
+    "vin": "ABCDEFGHIJKL1234567"
+  },
+  {
+    "policyNumber": "HPG-A555555",
+    "vehicleName": "2008 Ford Fiesta",
+    "idCardImage": "assets/images.jpg",
+    "vin": "ABCDEFGHIJKL1234567"
+  }
+]

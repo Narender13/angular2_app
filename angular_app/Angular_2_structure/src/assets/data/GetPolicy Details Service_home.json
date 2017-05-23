@@ -1,0 +1,18 @@
+{
+  "accountId": "00398450000-001-000",
+  "policyName": "John's Home 1",
+  "policyNumber": "HPG-A555555",
+  "policyStartDate": "11/11/1111",
+  "policyEndDate": "11/11/1111",
+  "amountDue": "0.00",
+  "insuredName": [{
+    "name": "John Smith",
+    "address": "1 Charles Street Worcester MA 01653"
+  }, {
+    "name": "Mary Smith",
+    "address": "1 Charles Street Worcester MA 01653"
+  }],
+  "policyPremium": "1000",
+  "dwellingAmount": "401000",
+  "deductible": "500"
+}

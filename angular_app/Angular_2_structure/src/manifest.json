@@ -1,0 +1,13 @@
+{
+  "name": "hanover-insurance-app",
+  "short_name": "hanover",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "assets/imgs/logo.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#003150",
+  "theme_color": "#003150"
+}

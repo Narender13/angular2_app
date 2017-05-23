@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title></ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="success-msg" text-wrap>
+    <ion-list no-lines class="list-with-header mb-0" text-wrap>
+        <ion-list-header text-uppercase>
+        </ion-list-header>
+        <ion-item class="msg">
+            <img src="assets/icon/check.svg" alt="Contact Us">
+            <p text-uppercase>Account Registration successful</p>
+        </ion-item>
+        <ion-item>
+            <p>Your Account Registration was successful.</p>
+            <p>You can now log in to your account with your newly created username and password.</p>
+        </ion-item>
+        <ion-item>
+            <p>You can also use this account info to log in to MHP at www.hanover.com</p>
+        </ion-item>
+    </ion-list>
+    <ion-row responsive-sm class="action-btn">
+        <ion-col>
+            <button ion-button class="btn-green" block (click)="loginPage()">GO TO LOG IN PAGE</button>
+        </ion-col>
+    </ion-row>
+</ion-content>

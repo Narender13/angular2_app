@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            ID CARDS
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<div *ngIf="spinner" class="loader">
+    <ion-spinner class="loading"></ion-spinner>
+</div>
+<ion-content text-wrap>
+    <div>
+        <ion-list no-lines class="list-with-header mb-0">
+            <ion-item class="itemHeight">
+                <p>Pick a Vehicle to view its ID Card</p>
+                <ion-icon item-right class="icon-right">
+                    <img src="assets/icon/idcards.svg" item-right alt="ID Card">
+                </ion-icon>
+            </ion-item>
+        </ion-list>
+        <ion-list class="list-with-header mb-0">
+            <ion-list-header text-uppercase>
+                VEHICLE LIST
+            </ion-list-header>
+            <div *ngIf="idCardList[0]">
+                <div *ngFor="let idCard of idCardList">
+                        <ion-item class="itemHeight" (click)="showConfirm(idCard)" detail-push>
+                            <h3 text-capitalize>{{idCard.modelYear}} {{idCard.manufacturer | lowercase}} {{idCard.model | lowercase}}</h3>
+                            <p><span class="vin-font">VIN: {{idCard.vehIdentificationNumber}}</span></p>
+                        </ion-item>
+                </div>
+            </div>
+            <div *ngIf="idCardList.length === 0">
+                <ion-item class="itemHeight2" no-lines>
+                    <p class="danger">Your vehicles are insured in a state that does not allow ID cards to be viewed online.</p>
+                </ion-item>
+            </div>
+        </ion-list>
+    </div>
+</ion-content>

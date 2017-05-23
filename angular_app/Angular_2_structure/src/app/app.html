@@ -1,0 +1,36 @@
+<ion-menu [content]="content" side="right" class="sidemenu">
+    <div *ngIf="spinner" class="loader">
+        <ion-spinner class="loading"></ion-spinner>
+    </div>
+    <ion-header>
+
+        <ion-title></ion-title>
+
+    </ion-header>
+    <ion-content>
+        <ion-item text-right text-uppercase class="title">SETTINGS</ion-item>
+        <ion-list class="mb-0">
+            <ion-item menuClose ion-item *ngFor="let p of profilePages" (click)="openPage(p)" text-right>
+                {{p.title}}
+            </ion-item>
+        </ion-list>
+        <ion-list class="mb-0">
+            <ion-item menuClose ion-item *ngFor="let p of userPages" (click)="openPage(p)" text-right>
+                {{p.title}}
+            </ion-item>
+            <ion-item ion-item (click)="privacyPolicyPage()" text-right>
+                Privacy Policy
+            </ion-item>
+            <ion-item ion-item (click)="termsPage()" text-right>
+                Terms & Conditions
+            </ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-item menuClose ion-item (click)="logout()" text-right>
+                Log Out
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

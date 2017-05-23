@@ -1,0 +1,59 @@
+<ion-header primary>
+    <ion-navbar>
+        <button ion-button menuToggle class="button" (click)="myGoBack()">
+            <ion-icon name="arrow-back"></ion-icon>
+            Settings
+        </button>
+        <ion-title>
+            <p class="header">MY PROFILE</p>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<div *ngIf="spinner" class="loader">
+    <ion-spinner class="loading"></ion-spinner>
+</div>
+<ion-content class="form" text-wrap>
+    <ion-list no-lines class="list-with-header mb-0">
+        <ion-item>
+            <p>Below information matches your account information in MHP. Any changes made here will automatically update your
+                information there.</p>
+        </ion-item>
+    </ion-list>
+    <div *ngIf="customerNbrinfo">
+        <form novalidate [formGroup]="profileForm">
+            <ion-list no-lines class="list-with-header mb-0">
+                <ion-list-header text-uppercase>
+                </ion-list-header>
+                <ion-item class="form-group">
+                    <ion-label stacked>* Email Address</ion-label>
+                    <ion-input type="email" name="email" formControlName="email" [class.invalid]="!profileForm.controls.email.valid && profileForm.controls.email.value"></ion-input>
+                </ion-item>
+                <p ion-text *ngIf="!profileForm.controls.email.valid && profileForm.controls.email.value" color="danger" padding-left>Please verify format</p>
+                <ion-item class="form-group">
+                    <ion-label stacked>Home Phone</ion-label>
+                    <ion-input type="tel" [textMask]="{mask: mask, guide:false}" name="homePhone" formControlName="homePhone" placeholder="000-000-0000" maxlength="12" 
+                        [class.invalid]="!profileForm.controls.homePhone.valid && profileForm.controls.homePhone.touched"></ion-input>
+                </ion-item>
+                <p ion-text *ngIf="!profileForm.controls.homePhone.valid && profileForm.controls.homePhone.touched" color="danger" padding-left>Please verify format</p>
+                <ion-item class="form-group">
+                    <ion-label stacked>Work Phone</ion-label>
+                    <ion-input type="tel" [textMask]="{mask: mask, guide:false}" name="homePhone" formControlName="workPhone" placeholder="000-000-0000" maxlength="12" 
+                        [class.invalid]="!profileForm.controls.workPhone.valid && profileForm.controls.workPhone.value"></ion-input>
+                </ion-item>
+                <p ion-text *ngIf="!profileForm.controls.workPhone.valid && profileForm.controls.workPhone.value" color="danger" padding-left>Please verify format</p>
+                <ion-item class="form-group">
+                    <ion-label stacked>Cell Phone</ion-label>
+                    <ion-input type="tel" [textMask]="{mask: mask, guide:false}" name="cellPhone" formControlName="cellPhone" placeholder="000-000-0000" maxlength="12" 
+                        [class.invalid]="!profileForm.controls.cellPhone.valid  && profileForm.controls.cellPhone.value"></ion-input>
+                </ion-item>
+                <p ion-text *ngIf="!profileForm.controls.cellPhone.valid  && profileForm.controls.cellPhone.value" color="danger" padding-left>Please verify format</p>
+            </ion-list>
+            <ion-row responsive-sm class="action-btn">
+                <ion-col>
+                    <button ion-button (click)="updateProfile(profileForm)" class="btn-green" [disabled]="!profileForm.dirty || !profileForm.valid"
+                        large>SAVE CHANGES</button>
+                </ion-col>
+            </ion-row>
+        </form>
+    </div>
+</ion-content>

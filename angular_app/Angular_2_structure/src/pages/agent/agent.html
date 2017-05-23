@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>MY AGENT</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content text-wrap>
+    <div *ngIf="spinner" class="loader">
+        <ion-spinner class="loading"></ion-spinner>
+    </div>
+    <div *ngIf="agentData">
+        <div *ngFor="let agent of agentData">
+            <ion-card *ngIf="agent.commercialName !== null">
+                <ion-list no-lines class="list-with-padding mb-0">
+                    <ion-item>
+                        <h2 text-uppercase class="title">{{agent.commercialName}}</h2>
+                        <ion-icon item-right class="icon-right">
+                            <img src="assets/icon/myagent.svg" alt="My Agent">
+                        </ion-icon>
+                    </ion-item>
+                    <div *ngFor="let addr of agent.addr" class="adr">
+                        <ion-item text-capitalize>
+                            <p>{{addr.addr1 | lowercase}}</p>
+                            <p>{{addr.addr2 | lowercase}}</p>
+                            <p>{{addr.city | lowercase}} {{addr.stateProvCd}} {{addr.postalCode}}</p>
+                        </ion-item>
+                    </div>
+                </ion-list>
+                <ion-list no-lines class="list-with-header">
+                    <ion-list-header text-uppercase><strong>
+                        CONTACT MY AGENT:
+                   </strong></ion-list-header>
+                    <div *ngFor="let comm of agent.communication">
+                        <ion-item class="insured">
+                            <p *ngIf="comm.phone[0]">Call: <span *ngFor="let phone of comm.phone; let i = index"><a (click)="call(phone.phoneNbr)" class="action-link">{{phone.phoneNbr}}</a></span></p>
+                            <p *ngIf="comm.email[0]">Email: <span *ngFor="let email of comm.email"><a href="mailto:{{email.emailAddr}}" class="action-link">{{email.emailAddr}}</a></span></p>
+                        </ion-item>
+                    </div>
+                </ion-list>
+            </ion-card>
+        </div>
+    </div>
+</ion-content>

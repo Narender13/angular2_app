@@ -1,0 +1,29 @@
+{
+  "accountId": "00398450000-001-000",
+  "policyName": "John's Home 1",
+  "policyNumber": "HPG-A555555",
+  "policyStartDate": "11/11/1111",
+  "policyEndDate": "11/11/1111",
+  "amountDue": "0.00",
+  "insuredName": [{
+    "name": "John Smith",
+    "address": "1 Charles Street Worcester MA 01653"
+  }, {
+    "name": "Mary Smith",
+    "address": "1 Charles Street Worcester MA 01653"
+  }],
+  "policyPremium": "1000",
+  "vehicles": [{
+    "policyNumber": "HPG-A555555",
+    "idCardImage": "assets/images.jpg",
+    "vehicleName": "2009 Toyoto Camry",
+    "vin": "ABCDEFGHIJKL1234567",
+    "vehiclePremium": "400"
+  }, {
+    "policyNumber": "HPG-A555555",
+    "idCardImage": "assets/images.jpg",
+    "vehicleName": "1999 Honda Accord",
+    "vin": "ABCDEFGHIJKL1234567",
+    "vehiclePremium": "600"
+  }]
+}

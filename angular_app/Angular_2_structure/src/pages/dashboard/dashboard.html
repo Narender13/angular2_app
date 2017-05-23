@@ -1,0 +1,126 @@
+<div *ngIf="spinner" class="loader">
+    <ion-spinner class="loading"></ion-spinner>
+</div>
+<ion-header>
+    <ion-navbar class="header-logo">
+        <button ion-button menuToggle right>
+           <!--  <ion-icon name="settings"></ion-icon> -->
+           <img src="assets/setting.png" alt="Setting">
+        </button>
+        <ion-title text-center>
+            <img src="assets/logo_light_small.png" alt="Hanover Logo ">
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content text-wrap>
+    <div class="bg-blue">
+        <ion-list no-lines class="dashboard-title mb-0">
+            <ion-item>
+                <p><strong>Welcome</strong></p>
+                <h2 *ngIf="customerinfo">{{customerinfo.customerJson.fullName}}!</h2>
+            </ion-item>
+        </ion-list>
+        <ion-list *ngIf="showPolicies" class="policy-list mb-0">
+            <div *ngIf="policyListData">
+                <div *ngFor="let homePolicy of homePolicyData; let i = index">
+                    <ion-item>
+                        <p><strong><span text-uppercase>{{homePolicy.policyNickName}}</span></strong></p>
+                        <p>Policy No. {{homePolicy.policySymbol}}-{{homePolicy.policyNbr}}</p>
+                        <p>Policy Period: {{homePolicy.policyEffectiveDt}} - {{homePolicy.policyExpirationDt}}</p>
+                        <p>Amount Due: {{homePolicy.amountDue || "$0.00"}}</p>
+                    </ion-item>
+                </div>
+                <div *ngFor="let autoPolicy of autoPolicyData; let i = index">
+                    <ion-item>
+                        <p><strong><span text-uppercase>{{autoPolicy.policyNickName}}</span></strong></p>
+                        <p>Policy No. {{autoPolicy.policySymbol}}-{{autoPolicy.policyNbr}}</p>
+                        <p>Policy Period: {{autoPolicy.policyEffectiveDt}} - {{autoPolicy.policyExpirationDt}}</p>
+                        <p>Amount Due: {{autoPolicy.amountDue || "$0.00"}}</p>
+                    </ion-item>
+                </div>
+                <div *ngFor="let umbrellaPolicy of umbrellaPolicyData; let i = index">
+                    <ion-item>
+                        <p><strong><span text-uppercase>{{umbrellaPolicy.policyNickName}}</span></strong></p>
+                        <p>Policy No. {{umbrellaPolicy.policySymbol}}-{{umbrellaPolicy.policyNbr}}</p>
+                        <p>Policy Period: {{umbrellaPolicy.policyEffectiveDt}} - {{umbrellaPolicy.policyExpirationDt}}</p>
+                        <p>Amount Due: {{umbrellaPolicy.amountDue || "$0.00"}}</p>
+                    </ion-item>
+                </div>
+                <div *ngFor="let waterPolicy of waterPolicyData; let i = index">
+                    <ion-item>
+                        <p><strong><span text-uppercase>{{waterPolicy.policyNickName}}</span></strong></p>
+                        <p>Policy No. {{waterPolicy.policySymbol}}-{{waterPolicy.policyNbr}}</p>
+                        <p>Policy Period: {{waterPolicy.policyEffectiveDt}} - {{waterPolicy.policyExpirationDt}}</p>
+                        <p>Amount Due: {{waterPolicy.amountDue || "$0.00"}}</p>
+                    </ion-item>
+                </div>
+                <div *ngFor="let dwellingPolicy of firePolicyData; let i = index">
+                    <ion-item>
+                        <p><strong><span text-uppercase>{{dwellingPolicy.policyNickName}}</span> </strong></p>
+                        <p>Policy No. {{dwellingPolicy.policySymbol}}-{{dwellingPolicy.policyNbr}}</p>
+                        <p>Policy Period: {{dwellingPolicy.policyEffectiveDt}} - {{dwellingPolicy.policyExpirationDt}}</p>
+                        <p>Amount Due: {{dwellingPolicy.amountDue || "$0.00"}}</p>
+                    </ion-item>
+                </div>
+            </div>
+        </ion-list>
+        <div class="acord-expand">
+            <button ion-button icon-only class="btn-acord" (click)="toggleShowDiv()">
+                 <img src="assets/arrow-up.png" alt="Arrow up" *ngIf="showPolicies">
+                  <img src="assets/arrow-down.png" alt="Arrow down" *ngIf="!showPolicies">
+            </button>
+        </div>
+    </div>
+    <ion-grid class="{{dashboardClass}}">
+        <ion-row *ngIf="!isClickEnable">
+            <p class="danger noPolicy-msg">There is a temporary technical problem in fetching your policy. Please try again later.</p>
+        </ion-row>
+        <ion-row>
+            <ion-col class="fade-line">
+                <div width-50 (click)="isClickEnable && myPolicyPage()">
+                    <img *ngIf="isClickEnable" src="assets/icon/policy.svg" alt="My Policy Details">
+                    <p *ngIf="isClickEnable">MY POLICY DETAILS</p>
+                    <img *ngIf="!isClickEnable" src="assets/icon/policy_gray.svg" alt="My Policy Details">
+                    <p *ngIf="!isClickEnable" class="gray">MY POLICY DETAILS</p>
+                </div>
+                <div width-50 (click)="isClickEnable && myBillsPage()">
+                    <img *ngIf="isClickEnable" src="assets/icon/mybills.svg" alt="My Bills">
+                    <p *ngIf="isClickEnable">MY BILLS</p>
+                    <img *ngIf="!isClickEnable" src="assets/icon/mybills_gray.svg" alt="My Bills">
+                    <p *ngIf="!isClickEnable" class="gray">MY BILLS</p>
+                </div>
+                <div width-50 (click)="roadsideAssistancePage()">
+                    <img src="assets/icon/roadside.svg" alt="Roadside Assistance">
+                    <p>ROADSIDE ASSISTANCE</p>
+                </div>
+            </ion-col>
+
+            <ion-col>
+                <div width-50 (click)="isIdClickEnable && idCardPage()">
+                    <img *ngIf="isIdClickEnable" src="assets/icon/idcards.svg" alt="MY ID Cards">
+                    <p *ngIf="isIdClickEnable">MY ID CARDS</p>
+                    <img *ngIf="!isIdClickEnable" src="assets/icon/idcards_gray.svg" alt="MY ID Cards">
+                    <p *ngIf="!isIdClickEnable" class="gray">MY ID CARDS</p>
+                </div>
+
+                <div width-50 (click)="isClickEnable && agentPage()">
+                    <img *ngIf="isClickEnable" src="assets/icon/myagent.svg" alt="My Agent">
+                    <p *ngIf="isClickEnable">MY AGENT</p>
+                    <img *ngIf="!isClickEnable" src="assets/icon/myagent_gray.svg" alt="My Agent">
+                    <p *ngIf="!isClickEnable" class="gray">MY AGENT</p>
+                </div>
+
+
+                <div width-50 (click)="contactUsPage()">
+                    <img src="assets/icon/contact.svg" alt="Contact Us">
+                    <p>CONTACT US</p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <a class="item link-orange" (click)="accidentSupportPage()">
+                Need Accident Support? Click Here 
+                </a>
+        </ion-row>
+    </ion-grid>
+</ion-content>
